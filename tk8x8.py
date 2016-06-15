@@ -11,11 +11,18 @@ from Tkinter import *
 from PIL import Image, ImageDraw
 from Adafruit_LED_Backpack import Matrix8x8
 
+LED_COLOR = {
+    "off"       : "#505050",
+    "red"       : "#ff3030",
+    "green"     : "#30ff30",
+    "white"     : "#ffffff",
+}
+
 NX = 8
 NY = 8
 I2C_ADDRESS = 0x70
-LED_ON_COLOR = "#30ff30"
-LED_OFF_COLOR = "#505050"
+LED_ON_COLOR = LED_COLOR["red"]
+LED_OFF_COLOR = LED_COLOR["off"]
 
 matrix = Matrix8x8.Matrix8x8(address=I2C_ADDRESS)
 
@@ -54,7 +61,8 @@ class Application(Frame):
                             background=LED_OFF_COLOR,
                             selectcolor=LED_ON_COLOR,
                             variable=var,
-                            command=self.display)
+                            command=self.display
+                            )
 
     def report(self):
         """Print current results to screen."""
@@ -72,7 +80,7 @@ class Application(Frame):
         for y in xrange(NY):
             row_byte = 0
             for x in xrange(NX):
-                bit = self.vars[y][x].get()
+                bit = self.vars[x][y].get()
                 row_byte += bit<<x 
                 matrix.set_pixel(x, y, bit)
             value += row_byte<<(8*y)    
@@ -95,8 +103,8 @@ class Application(Frame):
     def save_txt(self, filename="led8x8.txt"):
         """Save current bitmap to text file."""
         with open(filename,"w") as FILE:
-            for x in xrange(NX):
-                for y in xrange(NY):
+            for y in xrange(NY):
+                for x in xrange(NX):
                     FILE.write("{0}, ".format(self.vars[x][y].get()))
                 FILE.write("\n")
                        
@@ -119,7 +127,7 @@ class Application(Frame):
                 draw.ellipse(
                     [(cx-r,cy-r),(cx+r,cy+r)],
                     outline="black",
-                    fill=LED_ON_COLOR if self.vars[ny-1][nx-1].get() else LED_OFF_COLOR
+                    fill=LED_ON_COLOR if self.vars[nx-1][ny-1].get() else LED_OFF_COLOR
                     )
                 
         image.save(filename)        
@@ -129,4 +137,3 @@ class Application(Frame):
 #-------------------------------------------------------------------------------
 if __name__ == "__main__":
     Application(Tk()).mainloop()
-
