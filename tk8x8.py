@@ -57,7 +57,7 @@ class Application(Frame):
                             command=self.display)
 
     def report(self):
-        """Print current results to display."""
+        """Print current results to screen."""
         print "-"*17
         for x in xrange(NX):
             print "",
@@ -101,7 +101,7 @@ class Application(Frame):
                 FILE.write("\n")
                        
     def save_jpg(self, filename="led8x8.jpg", size=(100,100)):
-        """Save current bitmap to text file."""
+        """Save current bitmap to image file."""
         W, H = size
         image = Image.new("RGB", (W, H), "black")
         draw = ImageDraw.Draw(image)
