@@ -136,4 +136,4 @@ class Application(Frame):
 #  M A I N
 #-------------------------------------------------------------------------------
 if __name__ == "__main__":
-    Application(Tk()).mainloop()
+    Application(Tk().title("tk8x8")).mainloop()
