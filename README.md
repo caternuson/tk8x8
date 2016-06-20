@@ -1,6 +1,6 @@
 # tk8x8
 Python 2.7 Tkinter based GUI for interacting with Adafruit 8x8 LED matrices.
-![Screenshot](tk8x8_heart.png)
+<img src="tk8x8_heart.png" style="float: right;"/>
 
 # Dependencies
 * Python Imaging Library (PIL)
