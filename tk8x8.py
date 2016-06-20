@@ -23,6 +23,8 @@ NY = 8
 I2C_ADDRESS = 0x70
 LED_ON_COLOR = LED_COLOR["red"]
 LED_OFF_COLOR = LED_COLOR["off"]
+IMG_FILE = "led8x8.jpg"
+TXT_FILE = "led8x8.txt"
 
 matrix = Matrix8x8.Matrix8x8(address=I2C_ADDRESS)
 
@@ -50,6 +52,8 @@ class Application(Frame):
         self.tx_raw64 = Text(self,width=18, height=1)
         self.tx_raw64.grid(row=NX+3,column=0,columnspan=NX)
         self.tx_raw64.insert("1.0","0x0000000000000000")
+        
+        self.clear_all()
         
     def __makecheck__(self, var=None):
         return Checkbutton(self,
@@ -100,7 +104,7 @@ class Application(Frame):
         self.save_txt()
         self.save_jpg()
         
-    def save_txt(self, filename="led8x8.txt"):
+    def save_txt(self, filename=TXT_FILE):
         """Save current bitmap to text file."""
         with open(filename,"w") as FILE:
             for y in xrange(NY):
@@ -108,7 +112,7 @@ class Application(Frame):
                     FILE.write("{0}, ".format(self.vars[x][y].get()))
                 FILE.write("\n")
                        
-    def save_jpg(self, filename="led8x8.jpg", size=(100,100)):
+    def save_jpg(self, filename=IMG_FILE, size=(100,100)):
         """Save current bitmap to image file."""
         W, H = size
         image = Image.new("RGB", (W, H), "black")

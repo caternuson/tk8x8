@@ -1,2 +1,42 @@
 # tk8x8
-Python Tkinter based GUI for interacting with Adafruit 8x8 LED matrices. 
+Python 2.7 Tkinter based GUI for interacting with Adafruit 8x8 LED matrices.
+
+# Dependencies
+This program uses:
+* Python Imaging Library (PIL)
+* Adafruit Python Library for LED Backpacks
+** https://github.com/adafruit/Adafruit_Python_LED_Backpack
+
+# Install
+Simply clone this repo and run:
+```
+git clone https://github.com/caternuson/tk8x8.git
+cd tk8x8
+sudo python tk8x8.py
+```
+
+# Configuration
+Edit the following parts of the code for your setup.
+
+Set the I2C address of the LED 8x8 matrix:
+```python
+I2C_ADDRESS = 0x70
+```
+
+Set the LED color by selecting an option from the `LED_COLOR` dictionary:
+```python
+LED_ON_COLOR = LED_COLOR["green"]
+```
+
+Additional color definitions can be added to the `LED_COLOR` dictionary in string
+format. However, the syntax must be supported by both PIL and Tkinter.
+The following are options:
+* '#rgb'
+* '#rrggbb'
+* 'red'
+
+Change the names of the output files:
+```python
+IMG_FILE = "led8x8.jpg"
+TXT_FILE = "led8x8.txt"
+```
