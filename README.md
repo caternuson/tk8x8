@@ -33,8 +33,25 @@ The following are options:
 * '#rrggbb'
 * 'red'
 
-Set the names of the output files:
+Set the names of the output files created when the **[SAVE]** button is pressed:
 ```python
 IMG_FILE = "led8x8.jpg"
 TXT_FILE = "led8x8.txt"
+```
+
+# What's that big hex number on the bottom?
+The hex formatted number in the text edit at the bottom is a 64bit value
+representing the current bitmap, providing a compact storage scheme.
+To set the 8x8 LED matrix based on a 64bit value simply loop and bit
+shift the value, setting individual LEDs per bit. The following code snippet
+illustrates this.
+```python
+def set_raw64(value):
+    led8x8matrix.clear()
+    for y in xrange(8):
+        row_byte = value>>(8*y)
+        for x in xrange(8):
+            pixel_bit = row_byte>>x&1 
+            led8x8matrix.set_pixel(x,y,pixel_bit) 
+    led8x8mmatrix.write_display() 
 ```
