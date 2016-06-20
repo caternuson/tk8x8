@@ -2,8 +2,9 @@
 Python 2.7 Tkinter based GUI for interacting with Adafruit 8x8 LED matrices.
 
 # Dependencies
-This program uses:
+This program requires the following:
 * Python Imaging Library (PIL)
+    * https://pypi.python.org/pypi/PIL
 * Adafruit Python Library for LED Backpacks
     * https://github.com/adafruit/Adafruit_Python_LED_Backpack
 
@@ -15,8 +16,6 @@ $ cd tk8x8
 $ sudo python tk8x8.py
 ```
 # Configuration
-Edit the following parts of the code for your setup.
-
 Set the I2C address of the LED 8x8 matrix:
 ```python
 I2C_ADDRESS = 0x70
