@@ -42,6 +42,7 @@ TXT_FILE = "led8x8.txt"
 # What's that big hex number on the bottom?
 The hex formatted number in the text edit at the bottom is a 64bit value
 representing the current bitmap, providing a compact storage scheme.
+It can be copy-pasted for use in another project.
 To set the 8x8 LED matrix based on a 64bit value simply loop and bit
 shift the value, setting individual LEDs per bit. The following code snippet
 illustrates this.
