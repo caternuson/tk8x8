@@ -14,7 +14,7 @@ $ git clone https://github.com/caternuson/tk8x8.git
 $ cd tk8x8
 $ sudo python tk8x8.py
 ```
-# Configuration
+# Configure
 Set the I2C address of the LED 8x8 matrix:
 ```python
 I2C_ADDRESS = 0x70
