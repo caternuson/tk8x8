@@ -2,7 +2,6 @@
 Python 2.7 Tkinter based GUI for interacting with Adafruit 8x8 LED matrices.
 
 # Dependencies
-This program requires the following:
 * Python Imaging Library (PIL)
     * https://pypi.python.org/pypi/PIL
 * Adafruit Python Library for LED Backpacks
@@ -23,7 +22,7 @@ I2C_ADDRESS = 0x70
 
 Set the LED color by selecting an option from the `LED_COLOR` dictionary:
 ```python
-LED_ON_COLOR = LED_COLOR["green"]
+LED_ON_COLOR = LED_COLOR["red"]
 ```
 
 Additional color definitions can be added to the `LED_COLOR` dictionary in string
