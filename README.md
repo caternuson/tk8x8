@@ -32,7 +32,7 @@ The following are options:
 * '#rrggbb'
 * 'red'
 
-Change the names of the output files:
+Set the names of the output files:
 ```python
 IMG_FILE = "led8x8.jpg"
 TXT_FILE = "led8x8.txt"
