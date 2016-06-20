@@ -5,16 +5,15 @@ Python 2.7 Tkinter based GUI for interacting with Adafruit 8x8 LED matrices.
 This program uses:
 * Python Imaging Library (PIL)
 * Adafruit Python Library for LED Backpacks
-** https://github.com/adafruit/Adafruit_Python_LED_Backpack
+    * https://github.com/adafruit/Adafruit_Python_LED_Backpack
 
 # Install
 Simply clone this repo and run:
 ```
-git clone https://github.com/caternuson/tk8x8.git
-cd tk8x8
-sudo python tk8x8.py
+$ git clone https://github.com/caternuson/tk8x8.git
+$ cd tk8x8
+$ sudo python tk8x8.py
 ```
-
 # Configuration
 Edit the following parts of the code for your setup.
 
