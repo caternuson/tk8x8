@@ -25,8 +25,8 @@ LED_ON_COLOR = LED_COLOR["red"]
 ```
 
 Additional color definitions can be added to the `LED_COLOR` dictionary in string
-format. However, the syntax must be supported by both PIL and Tkinter.
-The following are options:
+format. However, the syntax must be supported by Tkinter.
+The following are some options:
 * '#rgb'
 * '#rrggbb'
 * 'red'
