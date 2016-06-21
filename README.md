@@ -3,8 +3,6 @@
 Python 2.7 Tkinter based GUI for interacting with Adafruit 8x8 LED matrices.
 
 # Dependencies
-* Python Imaging Library (PIL)
-    * https://pypi.python.org/pypi/PIL
 * Adafruit Python Library for LED Backpacks
     * https://github.com/adafruit/Adafruit_Python_LED_Backpack
 
@@ -33,9 +31,8 @@ The following are options:
 * '#rrggbb'
 * 'red'
 
-Set the names of the output files created when the **[SAVE]** button is pressed:
+Set the name of the output file created when the **[SAVE]** button is pressed:
 ```python
-IMG_FILE = "led8x8.jpg"
 TXT_FILE = "led8x8.txt"
 ```
 # X11 Forwarding
