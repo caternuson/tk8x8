@@ -8,7 +8,6 @@
 #===============================================================================
 from Tkinter import *
 
-from PIL import Image, ImageDraw
 from Adafruit_LED_Backpack import Matrix8x8
 
 LED_COLOR = {
@@ -27,7 +26,6 @@ NY = 8
 I2C_ADDRESS = 0x70
 LED_ON_COLOR = LED_COLOR["red"]
 LED_OFF_COLOR = LED_COLOR["off"]
-IMG_FILE = "led8x8.jpg"
 TXT_FILE = "led8x8.txt"
 
 matrix = Matrix8x8.Matrix8x8(address=I2C_ADDRESS)
@@ -106,7 +104,6 @@ class Application(Frame):
     def save_it(self):
         """Callback for save button."""
         self.save_txt()
-        self.save_jpg()
         
     def save_txt(self, filename=TXT_FILE):
         """Save current bitmap to text file."""
@@ -115,31 +112,7 @@ class Application(Frame):
                 for x in xrange(NX):
                     FILE.write("{0}, ".format(self.vars[x][y].get()))
                 FILE.write("\n")
-                       
-    def save_jpg(self, filename=IMG_FILE, size=(100,100)):
-        """Save current bitmap to image file."""
-        W, H = size
-        image = Image.new("RGB", (W, H), "black")
-        draw = ImageDraw.Draw(image)
-        
-        draw.polygon([(2,2),(W-2,2),(W-2,H-2),(2,H-2)], outline="white")
-        
-        dx = W/(NX+1)
-        dy = H/(NY+1)
-        r = (min(dx,dy)-1)/2
-        
-        for nx in xrange(1,NX+1):
-            for ny in xrange(1,NY+1):
-                cx = nx*dx
-                cy = ny*dy
-                draw.ellipse(
-                    [(cx-r,cy-r),(cx+r,cy+r)],
-                    outline="black",
-                    fill=LED_ON_COLOR if self.vars[nx-1][ny-1].get() else LED_OFF_COLOR
-                    )
-                
-        image.save(filename)        
-                
+                                       
 #-------------------------------------------------------------------------------
 #  M A I N
 #-------------------------------------------------------------------------------
