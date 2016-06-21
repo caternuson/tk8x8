@@ -38,6 +38,9 @@ Set the names of the output files created when the **[SAVE]** button is pressed:
 IMG_FILE = "led8x8.jpg"
 TXT_FILE = "led8x8.txt"
 ```
+# X11 Forwarding
+If you are accessing the pi remotely via ```ssh```, be sure to enable X11
+forwarding with the ```-X``` command line option.
 
 # What's that big hex number on the bottom?
 The hex formatted number in the text edit at the bottom is a 64bit value
