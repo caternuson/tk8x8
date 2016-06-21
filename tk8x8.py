@@ -12,10 +12,14 @@ from PIL import Image, ImageDraw
 from Adafruit_LED_Backpack import Matrix8x8
 
 LED_COLOR = {
-    "off"       : "#505050",
-    "red"       : "#ff3030",
-    "green"     : "#30ff30",
-    "white"     : "#ffffff",
+    "off"           : "#505050",
+    "red"           : "#fe3521",
+    "green"         : "#30ff30",
+    "pure-green"    : "#0fff87",
+    "yellow-green"  : "#a8ee19",
+    "yellow"        : "#fdb71a",
+    "blue"          : "#1ac4ff",
+    "white"         : "#fefefe",
 }
 
 NX = 8
