@@ -35,8 +35,13 @@ The following are options:
 
 Set the names of the output files created when the **[SAVE]** button is pressed:
 ```python
-IMG_FILE = "led8x8.jpg"
 TXT_FILE = "led8x8.txt"
+IMG_FILE = "led8x8.jpg"
+```
+
+Set the size of the output image:
+```python
+IMG_SIZE = 200
 ```
 # X11 Forwarding
 If you are accessing the pi remotely via ```ssh```, be sure to enable X11

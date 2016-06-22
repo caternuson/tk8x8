@@ -27,8 +27,9 @@ NY = 8
 I2C_ADDRESS = 0x70
 LED_ON_COLOR = LED_COLOR["red"]
 LED_OFF_COLOR = LED_COLOR["off"]
-IMG_FILE = "led8x8.jpg"
 TXT_FILE = "led8x8.txt"
+IMG_FILE = "led8x8.jpg"
+IMG_SIZE = 200
 
 matrix = Matrix8x8.Matrix8x8(address=I2C_ADDRESS)
 
@@ -116,7 +117,7 @@ class Application(Frame):
                     FILE.write("{0}, ".format(self.vars[x][y].get()))
                 FILE.write("\n")
                        
-    def save_jpg(self, filename=IMG_FILE, size=(100,100)):
+    def save_jpg(self, filename=IMG_FILE, size=(IMG_SIZE,IMG_SIZE)):
         """Save current bitmap to image file."""
         W, H = size
         image = Image.new("RGB", (W, H), "black")
